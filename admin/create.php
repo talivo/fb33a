@@ -33,6 +33,10 @@ require_once '../backend/config.php';
                 <label for="beschrijving">Beschrijving:</label>
                 <textarea name="beschrijving" id="beschrijving" cols="30" rows="10"></textarea>
             </div>
+            <div class="form-group">
+                <label for="taal">Taal:</label>
+                <input name="taal" id="taal"></input>
+            </div>
             <input type="submit" value="Opslaan">
                 
         </form>

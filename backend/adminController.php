@@ -16,12 +16,19 @@ if($action == "create")
         die("Vul de beschrijving in");
     }
 
+    $taal = $_POST['taal'];
+    if(empty($taal))
+    {
+        die("Vul de taal in");
+    }
+
     require_once 'conn.php';
-    $query = "INSERT INTO boeken (titel, beschrijving) VALUES(:titel, :beschrijving)";
+    $query = "INSERT INTO boeken (titel, beschrijving, taal) VALUES(:titel, :beschrijving, :taal)";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":titel" => $titel,
         ":beschrijving" => $beschrijving,
+        ":taal" => $taal
     ]);
 
     header("Location: ../admin/index.php?msg=Opgeslagen");
